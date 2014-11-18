@@ -6,7 +6,7 @@
 
 pkgname=arangodb-latest
 pkgver=2.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A distributed open-source database with a flexible data model for documents, graphs, and key-values."
 provides=("arangodb")
 conflicts=("arangodb" "arangodb-git")
