@@ -20,7 +20,7 @@ install=arangodb.install
 source=(  "https://github.com/triAGENS/ArangoDB/archive/v2.3.0.tar.gz"
           "arangodb.service")
 md5sums=( "0c1dc7bb45dbe2f8ed29d753d5aa5eb1"
-          "ccb8ede90277b4f78493c0466a797348")
+          "3cdd43ed5552ab918b41627ec4906e52")
 
 build() {
   ln -s -f /usr/bin/python2 python
