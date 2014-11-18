@@ -1,6 +1,6 @@
 # AUR: arangodb-latest
 
-A Arch Linux AUR package for ArangoDB
+An Arch Linux AUR package for ArangoDB
 
 ## Installation
 
