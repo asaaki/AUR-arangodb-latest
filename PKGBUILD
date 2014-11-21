@@ -6,7 +6,7 @@
 
 pkgname=arangodb-latest
 pkgver=2.3.0
-pkgrel=4
+pkgrel=5
 pkgdesc="A distributed open-source database with a flexible data model for documents, graphs, and key-values."
 provides=("arangodb")
 conflicts=("arangodb" "arangodb-git")
@@ -14,12 +14,12 @@ conflicts=("arangodb" "arangodb-git")
 arch=("i686" "x86_64")
 url="https://www.arangodb.com/"
 license=("Apache")
-depends=("openssl" "readline" "icu" "systemd")
+depends=("openssl" "readline" "systemd")
 makedepends=("go" "python2")
 install=arangodb.install
-source=(  "https://github.com/triAGENS/ArangoDB/archive/v2.3.0.tar.gz"
+source=(  "https://www.arangodb.com/repositories/Source/ArangoDB-2.3.0.tar.bz2"
           "arangodb.service")
-md5sums=( "c7ef54f2a1d29ff73bc29282e2218a3c"
+md5sums=( "ff6f86b6924206de020a54779ea25180"
           "3cdd43ed5552ab918b41627ec4906e52")
 
 build() {
@@ -27,7 +27,9 @@ build() {
   export PATH="`pwd`:$PATH"
 
   cd $srcdir/ArangoDB-$pkgver
-  ./configure --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc --localstatedir=/var
+  ./configure \
+    --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc --localstatedir=/var \
+    --enable-all-in-one-v8 --enable-all-in-one-libev --enable-all-in-one-icu
   make
 }
 
