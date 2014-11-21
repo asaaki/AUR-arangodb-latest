@@ -1,4 +1,4 @@
-# AUR: arangodb-latest
+# AUR: [arangodb-latest](https://aur.archlinux.org/packages/arangodb-latest/)
 
 An **Arch Linux** AUR package for [ArangoDB](https://www.arangodb.com/).
 
