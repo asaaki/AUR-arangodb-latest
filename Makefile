@@ -18,7 +18,7 @@ install:
 
 checksum:
 	@md5sum arangodb.service
-	@find . -maxdepth 1 -name v*.tar.gz -exec md5sum {} \;
+	@find . -maxdepth 1 -name "*.tar.{gz,bz2}" -exec md5sum {} \;
 
 clean:
 	@rm -rf *.xz *.gz pkg src
