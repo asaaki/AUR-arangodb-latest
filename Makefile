@@ -6,12 +6,13 @@ all: clean build check package
 build:
 	makepkg -c -s
 
+# NEEDS: pacman -S namcap
 check:
 	@namcap PKGBUILD
 	@find . -name $(PKG_NAME)-*$(PKG_SUFFIX) -exec namcap {} \;
 
 package:
-	@mkaurball
+	@makepkg --source
 
 install:
 	@find . -name $(PKG_NAME)-*$(PKG_SUFFIX) -exec sudo pacman -U {} \;
