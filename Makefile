@@ -12,6 +12,8 @@ check:
 	@find . -name $(PKG_NAME)-*$(PKG_SUFFIX) -exec namcap {} \;
 
 package:
+	@rm arangodb-latest-*.src.tar.gz
+	@chmod 0644 PKGBUILD arangodb.install arangodb.service
 	@makepkg --source
 
 install:
