@@ -1,10 +1,6 @@
 # Maintainer: Christoph Grabo <asaaki@mannaz.cc>
-#
-# based on:
-# - https://aur.archlinux.org/packages/arangodb
-# - https://aur.archlinux.org/packages/arangodb-git
 
-pkgname=arangodb-latest
+pkgname=arangodb
 pkgver=2.4.1
 pkgrel=1
 
@@ -13,7 +9,7 @@ license=("Apache")
 url="https://www.arangodb.com/"
 
 provides=("arangodb=$pkgver")
-conflicts=("arangodb" "arangodb-git")
+conflicts=("arangodb-latest" "arangodb-git")
 depends=("glibc" "gcc-libs" "openssl" "readline" "systemd")
 makedepends=("python2")
 

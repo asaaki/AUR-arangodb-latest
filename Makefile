@@ -1,4 +1,4 @@
-PKG_NAME=arangodb-latest
+PKG_NAME=arangodb
 PKG_SUFFIX=.pkg.tar.xz
 
 all: clean build check package
@@ -12,8 +12,8 @@ check:
 	@find . -name $(PKG_NAME)-*$(PKG_SUFFIX) -exec namcap {} \;
 
 package:
-	@rm arangodb-latest-*.src.tar.gz
-	@chmod 0644 PKGBUILD arangodb.install arangodb.service
+	@rm -f $(PKG_NAME)-*.src.tar.gz
+	@chmod 0644 PKGBUILD $(PKG_NAME).install $(PKG_NAME).service
 	@makepkg --source
 
 install:
