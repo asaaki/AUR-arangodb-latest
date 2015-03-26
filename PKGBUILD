@@ -10,7 +10,7 @@ url="https://www.arangodb.com/"
 
 provides=("arangodb=$pkgver")
 conflicts=("arangodb-latest" "arangodb-git")
-depends=("glibc" "gcc-libs" "openssl" "readline" "systemd")
+depends=("glibc" "gcc-libs" "openssl" "readline" "systemd" "icu")
 makedepends=("python2 go>=1.4")
 
 arch=("i686" "x86_64")
@@ -33,10 +33,6 @@ build() {
     --sbindir=/usr/bin \
     --sysconfdir=/etc \
     --localstatedir=/var \
-    --enable-all-in-one-libev \
-    --enable-all-in-one-etcd \
-    --enable-all-in-one-icu \
-    --enable-all-in-one-v8 \
     --disable-mruby
 
   msg2 "Build ArangoDB project ..."
