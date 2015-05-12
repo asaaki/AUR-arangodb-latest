@@ -36,7 +36,7 @@ build() {
     --disable-mruby
 
   msg2 "Build ArangoDB project ..."
-  make
+  make -j $(nproc)
 }
 
 check() {
